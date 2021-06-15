@@ -2,13 +2,9 @@ from django.contrib import admin
 
 from .models import Category, Genre, Title, User
 
-
+@admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_display = ('pk', 'email', 'bio', 'confirmation_code', 'role')
-
-
-admin.site.register(User, UserAdmin)
-
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
